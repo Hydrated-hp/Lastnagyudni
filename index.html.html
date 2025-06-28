@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Kinsa Pinaka Gwapa?</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      font-family: sans-serif;
+      background-color: #fff6e0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .container {
+      text-align: center;
+      max-width: 90%;
+      width: 100%;
+    }
+
+    .options {
+      margin-top: 20px;
+    }
+
+    .options button {
+      margin: 10px;
+      padding: 15px 25px;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      background: #ffcccc;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .options button:hover {
+      background: #ffaaaa;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    h2 {
+      font-size: 28px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .video-container {
+      position: relative;
+      width: 90%;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    video {
+      width: 100%;
+      max-height: 400px;
+      height: auto;
+      border-radius: 10px;
+      object-fit: contain;
+      pointer-events: none;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div id="quiz" class="container">
+    <h1>Kinsay pinaka ka gwapa sa ilahang tulo?🤔</h1>
+    <div class="options">
+      <button onclick="showWrong()">Maria</button>
+      <button onclick="showWrong()">Ana</button>
+      <button onclick="showWrong()">Veronica</button>
+    </div>
+  </div>
+
+  <div id="popup" class="container hidden">
+    <h2>SYEMPRE IKAW!🫶</h2>
+    <div class="video-container">
+      <video id="crushVid" autoplay playsinline>
+        <source src="crush_video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+
+  <script>
+    function showWrong() {
+      document.getElementById("quiz").style.display = "none";
+      const popup = document.getElementById("popup");
+      popup.classList.remove("hidden");
+
+      const video = document.getElementById("crushVid");
+      video.muted = false;
+      video.currentTime = 0;
+      video.play();
+    }
+  </script>
+</body>
+</html>
